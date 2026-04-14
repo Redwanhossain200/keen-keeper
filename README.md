@@ -23,5 +23,6 @@ KeenKeeper is a specialized relationship management platform designed to help yo
 ## 📦 Installation & Setup
 
 1. **Clone the repository:**
+
    ```bash
-   git clone [https://github.com/Redwanhossain200/keen-keeper.git](https://github.com/Redwanhossain200/keen-keeper.git)
+   https://github.com/Redwanhossain200/keen-keeper.git
