@@ -1,6 +1,6 @@
 # KeenKeeper 🎯
 
-live demo: [https://keen-keeper-bd.netlify.app/](https://keen-keeper-bd.netlify.app/)
+live demo : [https://keen-keeper-bd.netlify.app/](https://keen-keeper-bd.netlify.app/)
 
 KeenKeeper is a specialized relationship management platform designed to help you nurture and maintain meaningful connections with the people who matter most. In a busy world, it’s easy to lose track of when you last spoke to a close friend or family member. KeenKeeper acts as your "personal shelf of connections," reminding you to reach out and keeping a detailed history of your interactions.
 
@@ -24,4 +24,4 @@ KeenKeeper is a specialized relationship management platform designed to help yo
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/redwanhossain200/keenkeeper.git](https://github.com/redwanhossain200/keenkeeper.git)
+   git clone [https://github.com/Redwanhossain200/keen-keeper.git](https://github.com/Redwanhossain200/keen-keeper.git)
