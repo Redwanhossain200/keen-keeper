@@ -10,7 +10,7 @@ const ErrorPage = () => (
       </p>
       <Link
         to="/"
-        className="btn bg-[#244D3F] text-white hover:bg-[#1a3a2f] border-none mt-8 rounded-2xl transition-all py-6 px-8 animate-bounce hover:animate-none"
+        className="btn bg-[#244D3F] text-white hover:bg-[#1a3a2f] border-none mt-8 rounded-2xl transition-all py-6 px-8 text-lg font-semibold"
       >
         Back to Dashboard
       </Link>
