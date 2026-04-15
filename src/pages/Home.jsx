@@ -26,7 +26,7 @@ const Home = () => {
           <p className="text-gray-500 max-w-2xl mx-auto mb-8 text-sm md:text-base px-4">
             Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
           </p>
-          <button className="btn bg-[#244D3F] hover:bg-[#1a3a2d] text-white border-none px-8 rounded-lg shadow-lg mb-10">
+          <button className="btn bg-[#244D3F] hover:bg-[#1a3a2d] text-white hover:scale-105 transition-all active:scale-95 border-none py-6 px-8 rounded-lg shadow-lg mb-10">
             <FiPlus /> Add a Friend
           </button>
           <SummaryCards friends={friends} />

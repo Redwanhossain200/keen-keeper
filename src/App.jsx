@@ -18,7 +18,7 @@ function App() {
             position="top-center"
             reverseOrder={false}
             toastOptions={{
-              duration: 1200,
+              duration: 1000,
               style: {
                 borderRadius: '12px',
                 background: '#244D3F',
@@ -27,7 +27,7 @@ function App() {
             }}
           />
           <Navbar />
-          <main className="grow">
+          <main className="grow w-full">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/friend/:id" element={<FriendDetails />} />

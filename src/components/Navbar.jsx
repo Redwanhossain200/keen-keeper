@@ -1,6 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 import { RiBarChartLine, RiHome2Line, RiTimerLine, RiMenu3Line, RiCloseLine } from "react-icons/ri";
+import { FaUserCheck } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
         <div className="shrink-0">
           <Link to="/" className="hover:opacity-80 transition-opacity">
-            <h3 className="text-xl md:text-3xl font-bold">Keen<span className="text-[#244D3F]">Keeper</span></h3>
+            <h3 className="text-3xl md:text-4xl font-bold inline-flex items-center gap-1"><FaUserCheck size={30} className="text-3xl md:text-4xl" /> Keen<span className="text-green-800">Keeper</span></h3>
           </Link>
         </div>
 
@@ -50,7 +51,7 @@ const Navbar = () => {
         className={`absolute top-full left-0 w-full md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white/98 backdrop-blur-md shadow-md z-50 ${isOpen ? "max-h-100 opacity-100" : "max-h-0 opacity-0"
           }`}
       >
-        <div className="flex flex-col gap-3 p-4">
+        <div className="flex flex-col gap-3 p-3">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
@@ -58,8 +59,8 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className={({ isActive }) => (isActive ? activeStyle : normalStyle)}
             >
-              <span className="text-xl">{link.icon}</span>
-              <span className="text-lg">{link.label}</span>
+              <span className="text-sm">{link.icon}</span>
+              <span className="text-sm">{link.label}</span>
             </NavLink>
           ))}
         </div>

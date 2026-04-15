@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useTimeline } from "../context/TimelineContext";
@@ -44,14 +44,14 @@ const FriendDetails = () => {
   );
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 md:py-12 grid grid-cols-1 lg:grid-cols-3 gap-6 min-h-[calc(100vh-400px)]">
+    <div className="max-w-6xl mx-auto px-4 py-8 md:py-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
 
       <div className="lg:col-span-1 space-y-4">
-        <div className="bg-white p-6 md:p-8 rounded-xl border border-gray-100 shadow-sm text-center">
+        <div className="bg-white p-6 md:p-8 rounded-xl border border-gray-100 shadow-sm text-center cursor-pointer group transition-all">
           <img src={friend.picture} className="w-32 h-32 rounded-full mx-auto border-4 border-gray-50 object-cover mb-2" alt={friend.name} />
-          <h2 className="text-2xl font-bold text-gray-800">{friend.name}</h2>
+          <h2 className="text-2xl font-bold text-gray-800 group-hover:text-[#EFAD44] transition-colors">{friend.name}</h2>
 
-          <div className={`badge my-2 py-3 px-4 uppercase text-[10px] font-bold border-none text-white ${friend.status === "overdue" ? "bg-red-500" : friend.status === "almost due" ? "bg-orange-400" : "bg-[#244D3F]"}`}>
+          <div className={`badge my-2 py-4 px-5 uppercase rounded-full text-[11px] font-bold border-none text-white ${friend.status === "overdue" ? "bg-red-500" : friend.status === "almost due" ? "bg-orange-400" : "bg-[#244D3F]"}`}>
             {friend.status}
           </div>
 
@@ -70,10 +70,10 @@ const FriendDetails = () => {
         </div>
 
         <div className="flex flex-col gap-3 md:gap-4">
-          <button className="btn btn-outline border-gray-200 bg-white rounded-xl text-gray-600 flex items-center justify-start gap-3 hover:bg-gray-50 transition-all active:scale-95 text-base md:text-sm">
+          <button className="btn btn-outline border-gray-200 bg-white rounded-xl text-gray-600 flex items-center justify-start gap-3 hover:bg-gray-100 transition-all active:scale-95 text-base md:text-sm">
             <RiNotificationSnoozeLine /> Snooze 2 Weeks
           </button>
-          <button className="btn btn-outline border-gray-200 bg-white rounded-xl text-gray-600 flex items-center justify-start gap-3 hover:bg-gray-50 transition-all active:scale-95 text-base md:text-sm">
+          <button className="btn btn-outline border-gray-200 bg-white rounded-xl text-gray-600 flex items-center justify-start gap-3 hover:bg-gray-100 transition-all active:scale-95 text-base md:text-sm">
             <VscArchive /> Archive
           </button>
           <button className="btn btn-outline border-gray-200 bg-white rounded-xl text-red-400 hover:bg-red-400 hover:text-white flex items-center justify-start gap-3 transition-all active:scale-95 text-base md:text-sm">
@@ -82,28 +82,28 @@ const FriendDetails = () => {
         </div>
       </div>
 
-      <div className="lg:col-span-2 space-y-4">
+      <div className="lg:col-span-2 space-y-4 md:space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center">
-            <h4 className="text-3xl font-bold text-gray-800">{friend.days_since_contact}</h4>
+          <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center cursor-pointer group transition-all ">
+            <h4 className="text-3xl font-bold text-gray-800 group-hover:text-[#EFAD44] transition-all">{friend.days_since_contact}</h4>
             <p className="text-gray-500 text-xs mt-1 uppercase">Days Since Contact</p>
           </div>
-          <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center">
-            <h4 className="text-3xl font-bold text-gray-800">{friend.goal}</h4>
+          <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center cursor-pointer group transition-all ">
+            <h4 className="text-3xl font-bold text-gray-800 group-hover:text-[#EFAD44] transition-all">{friend.goal}</h4>
             <p className="text-gray-500 text-xs mt-1 uppercase">Goal (Days)</p>
           </div>
-          <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center">
-            <h4 className="text-lg font-bold text-gray-800 mt-2">{friend.next_due_date}</h4>
+          <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center cursor-pointer group transition-all ">
+            <h4 className="text-lg font-bold text-gray-800 group-hover:text-[#EFAD44] transition-all mt-2">{friend.next_due_date}</h4>
             <p className="text-gray-500 text-xs mt-1 uppercase">Next Due Date</p>
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+        <div className="bg-white p-6 rounded-xl border border-gray-100 cursor-pointer group shadow-sm">
           <div className="flex justify-between items-center mb-4">
             <h3 className="font-bold text-lg text-gray-800">Relationship Goal</h3>
             <button className="btn btn-sm hover:text-white hover:bg-[#244D3F] bg-gray-50 border-gray-200 text-gray-600 rounded-lg"><FiEdit /> Edit</button>
           </div>
-          <p className="text-gray-600">Connect every <span className="font-bold text-[#244D3F]">{friend.goal} days</span></p>
+          <p className="text-gray-600">Connect every <span className="font-bold transition-colors group-hover:text-[#EFAD44] text-[#244D3F]">{friend.goal} days</span></p>
         </div>
 
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
@@ -122,7 +122,7 @@ const FriendDetails = () => {
                 <div className="text-[#244D3F] group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
-                <span className="font-bold text-xs md:text-base text-gray-700">{item.type}</span>
+                <span className="font-bold text-xs md:text-base text-gray-700 group-hover:text-[#EFAD44] transition-colors">{item.type}</span>
               </button>
             ))}
           </div>
