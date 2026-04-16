@@ -1,5 +1,12 @@
 import React from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  Legend,
+  Tooltip,
+} from 'recharts';
 import { useTimeline } from '../context/TimelineContext';
 import { FaChartBar } from 'react-icons/fa';
 
@@ -7,9 +14,21 @@ const Stats = () => {
   const { interactions } = useTimeline();
 
   const statsData = [
-    { name: 'Text', value: interactions.filter(i => i.type === 'Text').length, color: '#8b5cf6' },
-    { name: 'Call', value: interactions.filter(i => i.type === 'Call').length, color: '#244D3F' },
-    { name: 'Video', value: interactions.filter(i => i.type === 'Video').length, color: '#22c55e' },
+    {
+      name: 'Text',
+      value: interactions.filter((i) => i.type === 'Text').length,
+      color: '#8b5cf6',
+    },
+    {
+      name: 'Call',
+      value: interactions.filter((i) => i.type === 'Call').length,
+      color: '#244D3F',
+    },
+    {
+      name: 'Video',
+      value: interactions.filter((i) => i.type === 'Video').length,
+      color: '#22c55e',
+    },
   ];
 
   const hasData = interactions.length > 0;
@@ -38,21 +57,30 @@ const Stats = () => {
                   paddingAngle={5}
                   cornerRadius={12}
                   dataKey="value"
-                  stroke="none"
-                >
+                  stroke="none">
                   {statsData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
                   ))}
                 </Pie>
                 <Tooltip
-                  contentStyle={{ borderRadius: '10px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                  contentStyle={{
+                    borderRadius: '10px',
+                    border: 'none',
+                    boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
+                  }}
                 />
-                <Legend verticalAlign="bottom" align="center" iconType="circle" />
+                <Legend
+                  verticalAlign="bottom"
+                  align="center"
+                  iconType="circle"
+                />
               </PieChart>
             </ResponsiveContainer>
           ) : (
             <div className="text-center">
-              <div className="mb-3 text-[#244D3F] flex justify-center items-center"><FaChartBar size={32} /></div>
+              <div className="mb-3 text-[#244D3F] flex justify-center items-center">
+                <FaChartBar size={32} />
+              </div>
               <p className="text-gray-400 text-lg italic">
                 No interactions logged yet.
               </p>

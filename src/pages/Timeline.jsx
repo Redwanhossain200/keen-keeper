@@ -1,13 +1,16 @@
-import { useState } from "react";
-import { useTimeline } from "../context/TimelineContext";
-import TimelineItem from "../components/TimelineItem";
-import { FaChartBar } from "react-icons/fa";
+import { useState } from 'react';
+import { useTimeline } from '../context/TimelineContext';
+import TimelineItem from '../components/TimelineItem';
+import { FaChartBar } from 'react-icons/fa';
 
 const Timeline = () => {
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState('All');
   const { interactions } = useTimeline();
 
-  const filtered = filter === "All" ? interactions : interactions.filter(i => i.type === filter);
+  const filtered =
+    filter === 'All'
+      ? interactions
+      : interactions.filter((i) => i.type === filter);
 
   return (
     <div className="max-w-6xl mx-auto py-12 px-4">
@@ -18,8 +21,7 @@ const Timeline = () => {
       <div className="flex justify-center md:justify-start mb-8">
         <select
           className="select select-bordered border border-gray-300 outline-none w-full max-w-xs rounded-xl bg-white"
-          onChange={(e) => setFilter(e.target.value)}
-        >
+          onChange={(e) => setFilter(e.target.value)}>
           <option value="All">All Interactions</option>
           <option value="Call">Call</option>
           <option value="Text">Text</option>
@@ -29,12 +31,12 @@ const Timeline = () => {
 
       <div className="space-y-6 bg-white p-6 md:p-8 rounded-xl border border-gray-100 shadow-sm">
         {filtered.length > 0 ? (
-          filtered.map((item) => (
-            <TimelineItem key={item.id} item={item} />
-          ))
+          filtered.map((item) => <TimelineItem key={item.id} item={item} />)
         ) : (
           <div className="text-center">
-            <div className="mb-3 text-[#244D3F] flex justify-center items-center"><FaChartBar size={32} /></div>
+            <div className="mb-3 text-[#244D3F] flex justify-center items-center">
+              <FaChartBar size={32} />
+            </div>
             <p className="text-gray-400 text-lg italic">
               No history found {filter}.
             </p>
