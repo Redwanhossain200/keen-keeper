@@ -27,7 +27,7 @@ function App() {
             }}
           />
           <Navbar />
-          <main className="grow-2 w-full">
+          <main className="grow w-full">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/friend/:id" element={<FriendDetails />} />
