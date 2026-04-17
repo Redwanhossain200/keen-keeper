@@ -1,28 +1,80 @@
-# KeenKeeper 🎯
+# 🎉 KeenKeeper
 
-### 🔗 **live demo** : [Visit Project](https://keen-keeper-bd.netlify.app/)
+> Your personal shelf of meaningful connections — browse, tend, and nurture the relationships that matter most.
 
-KeenKeeper is a specialized relationship management platform designed to help you nurture and maintain meaningful connections with the people who matter most. In a busy world, it’s easy to lose track of when you last spoke to a close friend or family member. KeenKeeper acts as your "personal shelf of connections," reminding you to reach out and keeping a detailed history of your interactions.
+Live site: [keen-keeper-app-mocha.vercel.app](https://keen-keeper-app-mocha.vercel.app)
 
-## 🚀 Key Features
+---
 
-* **Relationship Tracking Dashboard:** A comprehensive overview of your friends, categorized by status (On-track, Almost Due, or Overdue) based on your personal contact goals.
-* **Interactive Interaction Timeline:** Log every call, text, or video chat with a single click. The timeline provides a searchable and filterable history of your social reach-outs.
-* **Friendship Analytics:** Visual representation of your communication habits using integrated Pie Charts, helping you understand how you prefer to stay connected.
+## 📖 Description
+
+KeenKeeper is a relationship management app that helps you stay in touch with the people who matter. Set contact goals for each friend, log interactions, and get notified when you're falling behind — so no important relationship quietly fades away.
+
+---
 
 ## 🛠️ Technologies Used
 
-* **Frontend Library:** React.js (Vite)
-* **Routing:** React Router DOM
-* **Styling:** Tailwind CSS & DaisyUI
-* **State Management:** React Context API
-* **Data Visualization:** Recharts
-* **Notifications:** React Hot Toast
-* **Icons:** React Icons
+| Technology | Purpose |
+|---|---|
+| React.js + Vite | UI framework and build tool |
+| React Router DOM | Client-side page navigation |
+| Tailwind CSS + DaisyUI | Styling and responsive design |
+| Recharts | Pie chart on analytics page |
+| React Hot Toast | Toast notifications |
+| React Icons | Icons throughout the UI |
+| Google Fonts (Geist) | Typography |
 
-## 📦 Installation & Setup
+---
 
-1. **Clone the repository:**
+## ✨ Key Features
 
-   ```bash
-   https://github.com/Redwanhossain200/keen-keeper.git
+### 1. 👥 Friend Dashboard
+View all your friends as cards with their contact status — colour-coded as **On Track**, **Almost Due**, or **Overdue** — so you always know who needs attention at a glance.
+
+### 2. ⚡ Quick Check-In Logging
+From any friend's detail page, log a **Call**, **Text**, or **Video** interaction in one click. A toast notification confirms it, and the entry is instantly added to your Timeline.
+
+### 3. 📊 Friendship Analytics
+A live pie chart (powered by Recharts) breaks down your interactions by type, so you can see whether you're calling, texting, or video-chatting your friends most.
+
+---
+
+## 📋 Pages
+
+- **Home** — Friend cards grid with summary stats
+- **Friend Details** — Full profile, stats, relationship goal, and quick check-in
+- **Timeline** — Full interaction history with filter by type, search by name or type, and sort by date
+- **Stats** — Pie chart of interaction breakdown
+- **404** — Custom not-found page
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/Redwanhossain200/keen-keeper-app.git
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+```
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/       # Reusable UI components (Navbar, Footer, FriendCard…)
+├── pages/            # Route-level pages (Home, FriendDetails, Timeline, Stats)
+├── context/          # TimelineContext for global interaction state
+public/
+└── friends.json      # Friend data
+```
+
+---
+
+*Built with React + Vite · Deployed on Vercel*
